@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<div>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        fetch("https://ci-swapi.herokuapp.com/api/")
+            .then(response => response.text())
+            .then(data => displayData(data))
+            .catch((e) => {
+                console.error("Error: ", e);
+            })
+
+        function displayData(data) {
+            document.getElementById("content").innerText = data;
+        }
+    </script>
+</body>
+</html>
